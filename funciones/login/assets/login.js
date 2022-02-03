@@ -5,7 +5,11 @@ let jsonBD = [
   },
 ];
 
-function login(username, password) {
+function login() {
+
+  let username = document.getElementById('username').value
+  let password = document.getElementById('password').value
+
   if (!username || !password) {
     return "Usuario o contraseña no estan diligenciados";
   }
@@ -22,7 +26,3 @@ function login(username, password) {
 
   return `el usuario no existe`;
 }
-
-let respuesta = login("striker", "123456");
-
-console.log(respuesta);
