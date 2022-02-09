@@ -8,8 +8,7 @@ const port = process.env.PORT;
 
 app.use(morgan("dev"));
 
-app.get('/saludo', (req,  res) => {
-    res.json({saludo: "Hola"})
-})
+// Rutas
+app.use('/api/products', require('./routes/ProductsRoutes'))
 
 app.listen(port, () => console.log(`Ejecutando api en el puerto ${port}`));
