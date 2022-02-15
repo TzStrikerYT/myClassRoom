@@ -9,9 +9,15 @@ const getProducts = async (req, res) => {
 
 // Crear un producto en la base de datos
 const createProducts = async (req, res) => {
-  const product = new Product(req.body);
-  await product.save();
-  res.status(201).json({ status: "Producto creado correctamente" });
+
+  try {
+    const product = new Product(req.body);
+    await product.save();
+    res.status(201).json({ status: "Producto creado correctamente" });
+  } catch (error) {
+    console.log(error)
+    res.status(203).json({ status: "Producto no creado correctamente", error});
+  }
 };
 
 const updateProducts = async (req, res) => {
