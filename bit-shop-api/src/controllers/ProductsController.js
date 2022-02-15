@@ -14,18 +14,20 @@ const createProducts = async (req, res) => {
     const product = new Product(req.body);
     await product.save();
     res.status(201).json({ status: "Producto creado correctamente" });
+    //throw
   } catch (error) {
     console.log(error)
     res.status(203).json({ status: "Producto no creado correctamente", error});
   }
-};
+
+}
 
 const updateProducts = async (req, res) => {
-  res.json({ status: "Producto Actualizado exitosamente" });
-};
+  res.status(201).json({response: req.params})
+}
 
 module.exports = {
   getProducts,
   createProducts,
-  updateProducts,
+  updateProducts
 };
