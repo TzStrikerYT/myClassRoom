@@ -1,16 +1,21 @@
 // traer el modelo de datos
+const Product = require('../Models/Product')
 
 // Mostrar los productos creados en la BD
-const getProducts = (req, res) => {
+const getProducts = async (req, res) => {
+
+    console.log(req.body)
+
     res.json({name: "chocorramo"})
 }
 
 // Crear un producto en la base de datos
-const createProducts = (req, res) => {
-
+const createProducts = async (req, res) => {
+    console.log(req.body)
+    res.status(201).json(req.body)
 }
 
-const updateProducts = (req, res) => {
+const updateProducts = async (req, res) => {
     res.json({status: "Producto Actualizado exitosamente"})
 }
 

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const { Schema } = mongoose
 
 const productSchema = new Schema(
   {
@@ -12,7 +12,7 @@ const productSchema = new Schema(
       default: "El usuario no añadió una descropción",
     },
     image: { type: String, required: false, default: "Sin Imagénes" },
-    tags: { type: Array, required: false, default: false },
+    tags: { type: Array, required: false, default: false }
   },
   {
     versionKey: false,
