@@ -1,9 +1,9 @@
 const express = require("express");
 const env = require("dotenv");
 const morgan = require("morgan");
+require("./database")
 
 env.config();
-require('./database')
 const app = express();
 const port = process.env.PORT;
 
