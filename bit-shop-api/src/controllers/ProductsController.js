@@ -47,10 +47,24 @@ const deleteProduct = async( req, res) => {
   res.status(200).json({msj: "Producto eliminado"})
 }
 
+const manyProducts = (req, res) => {
+
+  try {
+    if (Object.prototype.toString.call(req.body) !== '[object Array]') throw "Se debe enviar un array"
+
+
+    console.log("sizas")
+  } catch (error) {
+    res.status(400).json({error})
+  }
+
+}
+
 module.exports = {
   getProducts,
   createProducts,
   updateProducts,
   getOneProduct,
-  deleteProduct
+  deleteProduct,
+  manyProducts
 };
