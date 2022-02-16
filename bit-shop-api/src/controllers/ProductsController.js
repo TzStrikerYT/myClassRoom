@@ -4,6 +4,7 @@ const Product = require("../Models/Product");
 // Mostrar los productos creados en la BD
 const getProducts = async (req, res) => {
   const products = await Product.find();
+  //console.log(req.params, req.query)
   res.status(200).json(products);
 };
 
@@ -13,7 +14,7 @@ const getOneProduct = async (req, res) => {
     const product = await Product.findById(id);
     res.status(200).json(product ? product : "El producto no existe");
   } catch (error) {
-    res.status(200).json({msj: "Error al consultar el id", error});
+    res.status(200).json({ msj: "Error al consultar el id", error });
   }
 };
 
@@ -34,31 +35,30 @@ const createProducts = async (req, res) => {
 const updateProducts = async (req, res) => {
   try {
     const id = req.params.productId;
-    const updated = await Product.findByIdAndUpdate(id, {$set: req.body});
+    const updated = await Product.findByIdAndUpdate(id, { $set: req.body });
     res.status(201).json(updated);
   } catch (error) {
     res.status(201).json({ msj: "Actualizacion fallida", error });
   }
 };
 
-const deleteProduct = async( req, res) => {
-  const id = req.params.productId
-  await Product.findByIdAndDelete(id)
-  res.status(200).json({msj: "Producto eliminado"})
-}
+const deleteProduct = async (req, res) => {
+  const id = req.params.productId;
+  await Product.findByIdAndDelete(id);
+  res.status(200).json({ msj: "Producto eliminado" });
+};
 
-const manyProducts = (req, res) => {
-
+const manyProducts = async (req, res) => {
   try {
-    if (Object.prototype.toString.call(req.body) !== '[object Array]') throw "Se debe enviar un array"
-
-
-    console.log("sizas")
+    for (let product of req.body) {
+      const insertion = new Product(product);
+      await insertion.save();
+    }
+    res.status(201).json("Elementos creados correctamente");
   } catch (error) {
-    res.status(400).json({error})
+    res.status(400).json({ error });
   }
-
-}
+};
 
 module.exports = {
   getProducts,
@@ -66,5 +66,5 @@ module.exports = {
   updateProducts,
   getOneProduct,
   deleteProduct,
-  manyProducts
+  manyProducts,
 };
