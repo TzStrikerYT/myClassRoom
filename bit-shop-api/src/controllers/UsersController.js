@@ -74,8 +74,6 @@ const login = async (req, res) => {
         { expiresIn: "2h" }
       );
       
-      const response = token
-
       res.status(200).json({ status: "ingreso exitoso", token });
     }
 
