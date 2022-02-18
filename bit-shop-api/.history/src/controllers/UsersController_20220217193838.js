@@ -68,15 +68,14 @@ const login = async (req, res) => {
           email,
           username: user.username,
           phone: user.phone,
-          permissions: user.Permissions
         },
         process.env.JWT_SECRET_KEY,
         { expiresIn: "2h" }
       );
-      
-      const response = token
 
-      res.status(200).json({ status: "ingreso exitoso", token });
+      user.token = token
+
+      res.status(200).json({ status: "ingreso exitoso", user });
     }
 
     throw "Credenciales son invalidas";

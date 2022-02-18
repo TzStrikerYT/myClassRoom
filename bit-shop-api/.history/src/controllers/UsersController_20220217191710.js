@@ -1,8 +1,8 @@
 // traer el modelo de datos
 const User = require("../Models/User");
-const jwt = require("jsonwebtoken");
-const env = require("dotenv");
-env.config();
+const jwt = require("jsonwebtoken")
+const env = require("dotenv")
+env.config()
 
 // Mostrar los productos creados en la BD
 const getUsers = async (req, res) => {
@@ -52,44 +52,17 @@ const deleteUser = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    if (!email || !password) throw "Uno o mas campos estan vacios";
-
-    const user = await User.findOne({ email });
-
-    if (password === user.password) {
-      // generar token
-
-      const token = jwt.sign(
-        {
-          user_id: user._id,
-          email,
-          username: user.username,
-          phone: user.phone,
-          permissions: user.Permissions
-        },
-        process.env.JWT_SECRET_KEY,
-        { expiresIn: "2h" }
-      );
-      
-      const response = token
-
-      res.status(200).json({ status: "ingreso exitoso", token });
+    try {
+        
+    } catch (err) {
+        
     }
-
-    throw "Credenciales son invalidas";
-  } catch (err) {
-    res.status(400).json({ err });
-  }
-};
+}
 
 module.exports = {
   getUsers,
   createUsers,
   updateUsers,
   getOneUser,
-  deleteUser,
-  login,
+  deleteUser
 };
