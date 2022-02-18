@@ -1,0 +1,29 @@
+npm init -y --- generar package.json
+npm i express nodemon morgan --- instalar librerias basicas
+
+Añadir scripts para ejecutar la palicacion
+
+Example
+
+{
+  "name": "bit-shop-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
+
+npm run dev --- ejecucion de los scripts
+
