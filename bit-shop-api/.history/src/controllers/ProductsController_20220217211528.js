@@ -47,7 +47,7 @@ const deleteProduct = async (req, res) => {
   const permissions = req.pato.permissions;
 
   if (permissions.admin) {
-    await Product.findByIdAndDelete(id);
+    //await Product.findByIdAndDelete(id);
     res.status(200).json({ msj: "Producto eliminado", user: req.pato });
   } else {
     res.status(401).json({msj: "No tienes permiso para hacer esta acción"})
