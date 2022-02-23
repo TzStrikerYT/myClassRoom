@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   products = [
     {
       name: "Camiseta",
-      price: "$80.000"
+      price: "$80.000",
     },
     {
       name: "Pantalon",
