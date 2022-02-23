@@ -1,0 +1,35 @@
+<div class="">
+  <!-- banner -->
+  <header class="w-100 bg-yellow text-center text-white p-5">
+    <h1>Adquiere lo mejor de nuestra plataforma</h1>
+  </header>
+
+  <!-- products container -->
+  <section class="mt-3">
+    <div
+      class="d-flex flex-wrap justify-content-center"
+      *ngIf="products; else noProducts"
+    >
+      <div *ngFor="let product of products">
+        <div class="card card-size m-2">
+          <div>
+            <img
+              class="img-fluid rounded-top"
+              src="assets/img/chompoPercho.jpg"
+              alt="producto"
+            />
+          </div>
+          <div class="mt-3">
+            <h4 class="small text-center">{{ product.name }}</h4>
+            <p class="text-center">{{ product.price }}</p>
+            <div class="text-center p-3">
+              <a class="btn btn-success" href="">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noProducts> no hay procto joven! </ng-template>
+  </section>
+</div>
