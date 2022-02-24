@@ -3,21 +3,21 @@
 
     <h4 class="text-muted text-center mb-5">Iniciar Sesión</h4>
 
-    <form>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
       <!-- Email input -->
       <div class="mb-4">
-        <input type="email" id="form1Example1" class="form-control" />
+        <input type="email" name="email" class="form-control" />
         <label class="form-label" for="form1Example1">Correo Electronico</label>
       </div>
 
       <!-- Password input -->
       <div class="mb-4">
-        <input type="password" id="form1Example2" class="form-control" />
+        <input type="password" name="password" class="form-control" />
         <label class="form-label" for="form1Example2">Contraseña</label>
       </div>
 
       <!-- Submit button -->
-      <button type="submit" class="btn bg-yellow text-white btn-block">
+      <button type="submit" class="btn bg-yellow text-white btn-block" >
         Iniciar Sesion
       </button>
     </form>
