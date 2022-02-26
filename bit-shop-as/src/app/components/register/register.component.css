@@ -1,0 +1,6 @@
+.bg-image {
+    background: url('../../../assets/img/fondo2.svg');
+    background-repeat: no-repeat;
+    background-size: 64%;
+    background-position: center;
+}
