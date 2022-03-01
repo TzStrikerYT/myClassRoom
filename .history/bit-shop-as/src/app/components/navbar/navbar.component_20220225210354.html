@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-purple-pastel">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">Bit-shop</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="#">Productos</a>
+        <a class="nav-link" href="#">Faq</a>
+        <a class="nav-link" href="#">Admin</a>
+      </div>
+
+      <div class="navbar-nav ms-auto" *ngIf="!token else usserLogged">
+        <a class="btn btn-outline-light m-2" href="/login">Iniciar Sesion</a>
+        <a class="btn btn-outline-light m-2" href="/register">Registrarse</a>
+      </div>
+
+      <ng-template #usserLogged> 
+        <div class="navbar-nav ms-auto">
+            <a class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ user }}
+            </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button class="dropdown-item" type="button">Opciones</button></li>
+                <li><button class="dropdown-item" type="button">Mis compras</button></li>
+                <hr>
+                <li><button class="dropdown-item" type="button">Cerrar Sesion</button></li>
+              </ul>
+          </div>
+      </ng-template>
+
+    </div>
+  </div>
+</nav>

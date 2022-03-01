@@ -1,0 +1,25 @@
+<section class="bg-yellow p-5">
+  <div class="col-md-4 p-5 shadow-lg rounded bg-light">
+
+    <h4 class="text-muted text-center mb-5">Iniciar Sesión</h4>
+
+    <form #loginForm="ngForm">
+      <!-- Email input -->
+      <div class="mb-4">
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="loginService.selectedUser.email" class="form-control" />
+        <label class="form-label" for="form1Example1">Correo Electronico</label>
+      </div>
+
+      <!-- Password input -->
+      <div class="mb-4">
+        <input type="password" name="password" #password="ngModel" [(ngModel)]="loginService.selectedUser.password" class="form-control" />
+        <label class="form-label" for="form1Example2">Contraseña</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn bg-yellow text-white btn-block" (click)="login(loginForm)">
+        Iniciar Sesion
+      </button>
+    </form>
+  </div>
+</section>

@@ -13,17 +13,14 @@ export class LoginComponent implements OnInit {
 
   /* valores del formulario */
 
-  constructor(public userService: UserService) {
+  constructor(public user: UserService) {
    }
 
   ngOnInit(): void {
   }
 
   login(form: NgForm){
-    
-    if(!form.value.email || !form.value.password ) alert('Uno o mas campos estan vacios')
     console.log(form.value)
-
   }
 
 }

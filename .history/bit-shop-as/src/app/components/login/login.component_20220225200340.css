@@ -1,0 +1,5 @@
+.bg-image {
+    background: url('../../../assets/img/fondo.svg');
+    background-repeat: no-repeat;
+    background-size: 64%;
+}

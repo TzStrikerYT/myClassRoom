@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/userService/user.service';
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/models/userModel';
-
 
 @Component({
   selector: 'app-login',
@@ -13,17 +11,17 @@ export class LoginComponent implements OnInit {
 
   /* valores del formulario */
 
-  constructor(public userService: UserService) {
+  public email=""
+  public password=""
+
+  constructor() {
    }
 
   ngOnInit(): void {
   }
 
-  login(form: NgForm){
-    
-    if(!form.value.email || !form.value.password ) alert('Uno o mas campos estan vacios')
-    console.log(form.value)
-
+  login(){
+    console.log(this.email, this.password)
   }
 
 }

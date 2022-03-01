@@ -1,24 +1,24 @@
 <section class="mt-4">
 
     <div class="row w-100">
-        <div class="col-lg-5 py-5 d-flex align-items-center justify-content-center">
+        <div class="col-lg-5 d-flex align-items-center justify-content-center">
             
             <div class="p-5 shadow-lg rounded w-75">
 
                 <h3 class="text-purple-dark mb-3 text-center">Iniciar Sesion</h3>
                 <hr class="mb-5 text-purple-pastel">
 
-                <form #loginForm="ngForm">
+                <form>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-                      <input type="email" class="form-control" #email="ngModel" name="email" [(ngModel)]="userService.slectedUser.email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" #password="ngModel" [(ngModel)]="userService.slectedUser.password">
+                      <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="text-center mt-5">
-                        <a class="btn bg-purple-pastel text-white text-center" (click)="login(loginForm)">Iniciar Sesion</a>
+                        <button type="submit" class="btn bg-purple-pastel text-center">Iniciar Sesion</button>
                     </div>
                   </form>
 
@@ -26,8 +26,8 @@
 
         </div>
     
-        <div class="col-lg-7 bg-image">
-
+        <div class="col-lg-7 bg-success">
+            img
         </div>
     
     </div>

@@ -15,10 +15,10 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" #password="ngModel" [(ngModel)]="userService.slectedUser.password">
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" #password="ngModel" [(ngModel)]="password">
                     </div>
                     <div class="text-center mt-5">
-                        <a class="btn bg-purple-pastel text-white text-center" (click)="login(loginForm)">Iniciar Sesion</a>
+                        <a class="btn bg-purple-pastel text-white text-center" (click)="login()">Iniciar Sesion</a>
                     </div>
                   </form>
 

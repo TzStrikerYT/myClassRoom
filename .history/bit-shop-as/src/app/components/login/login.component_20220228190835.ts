@@ -20,10 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm){
-    
-    if(!form.value.email || !form.value.password ) alert('Uno o mas campos estan vacios')
     console.log(form.value)
-
   }
 
 }
