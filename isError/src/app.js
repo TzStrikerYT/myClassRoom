@@ -11,7 +11,7 @@ app.use(morgan("dev"));
 app.use(express.json())
 
 // Rutas
-app.use('/api/products', requre('./routes/ProductsRoutes'))
-app.use('/api/user', require('./.git'))
+app.use('/api/products', require('./routes/ProductsRoutes'))
+app.use('/api/user', require('./routes/UserRoutes'))
 
-app.listen(/*port, () => console.log(`Ejecutando api en el puerto ${port}`)*/);
+app.listen(port, () => console.log(`Ejecutando api en el puerto ${port}`));

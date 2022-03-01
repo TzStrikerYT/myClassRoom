@@ -1,5 +1,5 @@
 // traer el modelo de datos
-const User = requiere("../Models/User");
+const User = require("../Models/User");
 const jwt = require("jsonwebtoken");
 
 // Mostrar los productos creados en la BD
@@ -85,6 +85,7 @@ const login = async (req, res) => {
 
 module.exports = {
   getUsers,
+  getOneUser,
   createUsers,
   updateUsers,
   deleteUser,

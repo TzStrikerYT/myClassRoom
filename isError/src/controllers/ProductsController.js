@@ -31,16 +31,15 @@ const createProducts = async (req, res) => {
   }
 };
 
-// Actualizar un producto en la base de datos
-// const updateProducts = async (req, res) => {
-//   try {
-//     const id = req.params.productId;
-//     const updated = await Product.findByIdAndUpdate(id, { $set: req.body });
-//     res.status(201).json(updated);
-//   } catch (error) {
-//     res.status(201).json({ msj: "Actualizacion fallida", error });
-//   }
-// };
+const updateProducts = async (req, res) => {
+  try {
+    const id = req.params.productId;
+    const updated = await Product.findByIdAndUpdate(id, { $set: req.body });
+    res.status(201).json(updated);
+  } catch (error) {
+    res.status(201).json({ msj: "Actualizacion fallida", error });
+  }
+};
 
 const deleteProduct = async (req, res) => {
   const id = req.params.productId;
@@ -69,7 +68,7 @@ const manyProducts = async (req, res) => {
 module.exports = {
   getProducts,
   createProducts,
-  // updateProducts,
+  updateProducts,
   getOneProduct,
   deleteProduct,
   manyProducts,
