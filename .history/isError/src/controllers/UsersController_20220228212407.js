@@ -83,7 +83,7 @@ const login = async (req, res) => {
 
     throw "Usuario no existe";
   } catch (err) {
-    res.status(401).json({ err });
+    res.status(200).json({ err });
   }
 };
 

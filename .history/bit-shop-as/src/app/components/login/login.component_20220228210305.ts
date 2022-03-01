@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       if (!form.value.email || !form.value.password)
         throw 'Uno o mas campos estan vacios';
 
-      this.userService.login(form.value).subscribe(res => console.log(res))
+      console.log(this.userService.login(form.value))
     } catch (error) {
       alert(error);
       return

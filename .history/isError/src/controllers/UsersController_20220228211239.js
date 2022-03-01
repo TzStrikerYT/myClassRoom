@@ -59,7 +59,7 @@ const login = async (req, res) => {
 
     const user = await User.findOne({ email });
 
-    if(user){
+    if(){
       if (password === user.password) {
         // generar token
   
@@ -83,7 +83,7 @@ const login = async (req, res) => {
 
     throw "Usuario no existe";
   } catch (err) {
-    res.status(401).json({ err });
+    res.status(400).json({ err });
   }
 };
 

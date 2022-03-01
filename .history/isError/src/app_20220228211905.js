@@ -1,7 +1,6 @@
 const express = require("express");
 const env = require("dotenv");
 const morgan = require("morgan");
-const cors = require('cors')
 
 env.config();
 require('./database')
@@ -10,7 +9,7 @@ const port = process.env.PORT;
 
 app.use(morgan("dev"));
 app.use(express.json())
-app.use(cors({ origin: ['http://localhost:4200'] }))
+app.use(cors({origin: ['http://localhost:4200']}))
 
 // Rutas
 app.use('/api/products', require('./routes/ProductsRoutes'))
