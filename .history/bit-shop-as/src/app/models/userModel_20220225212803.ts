@@ -4,7 +4,7 @@ export class User {
   password: string;
   phone: string;
   username: string;
-  Permissions: any;
+  permissions: any;
   isLogged: boolean;
 
   constructor(
@@ -13,7 +13,7 @@ export class User {
     password = '',
     phone = '',
     username = '',
-    Permissions = {},
+    permissions = {},
     isLogged = false
   ) {
     this._id = _id;
@@ -21,7 +21,7 @@ export class User {
     this.password = password;
     this.phone = phone;
     this.username = username;
-    this.Permissions = Permissions;
+    this.permissions = permissions;
     this.isLogged = isLogged;
   }
 }

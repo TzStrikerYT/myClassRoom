@@ -8,25 +8,25 @@
                 <h3 class="text-purple-dark mb-3 text-center">Registrarme</h3>
                 <hr class="mb-5 text-purple-pastel">
 
-                <form #userForm="ngForm">
+                <form>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nombre de usuario</label>
-                    <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="userService.slectedUser.username" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-                      <input type="email" class="form-control"  name="email" #email="ngModel" [(ngModel)]="userService.slectedUser.email" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Telefono</label>
-                      <input type="number" class="form-control"   name="phone" #phone="ngModel" [(ngModel)]="userService.slectedUser.phone" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control"  name="password" #password="ngModel" [(ngModel)]="userService.slectedUser.password">
+                      <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="text-center mt-5">
-                        <a class="btn bg-purple-pastel text-white text-center" (click)="register(userForm)">Registrarme</a>
+                        <button type="submit" class="btn bg-purple-pastel text-white text-center">Iniciar Sesion</button>
                     </div>
                   </form>
 

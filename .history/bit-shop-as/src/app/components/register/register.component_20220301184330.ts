@@ -9,15 +9,9 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  register(form?: any){
-
-    console.log(form.value)
-
   }
 
 }

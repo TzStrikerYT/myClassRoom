@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register(form?: any){
+  register(form: any){
 
     console.log(form.value)
 
