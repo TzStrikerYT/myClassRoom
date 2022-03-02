@@ -6,6 +6,7 @@ export class User {
   username: string;
   Permissions: any;
   isLogged: boolean;
+  confirmPassword: string;
 
   constructor(
     _id = '',
@@ -14,7 +15,8 @@ export class User {
     phone = '',
     username = '',
     Permissions = {},
-    isLogged = false
+    isLogged = false,
+    confirmPassword = ""
   ) {
     this._id = _id;
     this.email = email;
@@ -23,5 +25,6 @@ export class User {
     this.username = username;
     this.Permissions = Permissions;
     this.isLogged = isLogged;
+    this.confirmPassword = confirmPassword
   }
 }

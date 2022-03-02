@@ -28,5 +28,17 @@ export class UserService {
     return this.http.post(`${this.url_api}/login`, credentials)
   }
 
+  /*
+  formUser = {
+    email: "",
+    password: "",
+    phone: "",
+    username: ""
+  }
+  */
+  register(formUser: any){
+    return this.http.post(`${this.url_api}/create-user`, formUser)
+  }
+
 
 }
