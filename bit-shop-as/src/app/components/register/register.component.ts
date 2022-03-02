@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/userService/user.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService, public router: Router) {}
 
   ngOnInit(): void {}
 
@@ -51,6 +52,7 @@ export class RegisterComponent implements OnInit {
       (err) => console.log(err)
     )
 
+    this.router.navigate(['/login'])
     return;
   }
 }
