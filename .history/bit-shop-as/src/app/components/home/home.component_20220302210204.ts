@@ -11,15 +11,11 @@ export class HomeComponent implements OnInit {
   constructor(public productsService: ProductService) { }
 
   ngOnInit(): void {
-    this.getProducts()
   }
 
   getProducts(){
     this.productsService.getProducts().subscribe(
-      (pato: any) => {
-        this.productsService.products = pato
-        console.log(this.productsService.products)
-      }
+      (data) => this.productsService.products = data 
     )
   }
 

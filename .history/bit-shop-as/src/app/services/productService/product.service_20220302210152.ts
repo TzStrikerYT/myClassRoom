@@ -10,7 +10,7 @@ export class ProductService {
 
   //selectedProduct: Product
   products: any
-  url_api = `${environment.API_URL}/products`
+  url_api = environment.API_URL
 
   constructor(public http: HttpClient) {
     //this.selectedProduct = new Product()

@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
 
   getProducts(){
     this.productsService.getProducts().subscribe(
-      (pato: any) => {
-        this.productsService.products = pato
+      (data: any) => {
+        this.productsService.products = data
         console.log(this.productsService.products)
       }
     )

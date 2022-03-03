@@ -8,12 +8,12 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductService {
 
-  //selectedProduct: Product
-  products: any
-  url_api = `${environment.API_URL}/products`
+  selectedProduct: Product
+  products: Product[]
+  url_api = environment.API_URL
 
   constructor(public http: HttpClient) {
-    //this.selectedProduct = new Product()
+    this.selectedProduct = new Product()
   }
 
   getProducts(){

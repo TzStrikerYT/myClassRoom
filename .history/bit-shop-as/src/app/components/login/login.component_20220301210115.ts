@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/userService/user.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/userModel';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +11,7 @@ import { User } from 'src/app/models/userModel';
 export class LoginComponent implements OnInit {
   /* valores del formulario */
 
-  constructor(public userService: UserService, public router: Router) {
-  }
-
+  constructor(public userService: UserService, public router: Router) {}
 
   ngOnInit(): void {}
 

@@ -4,8 +4,8 @@ const Product = require("../Models/Product");
 // Mostrar los productos creados en la BD
 const getProducts = async (req, res) => {
   const products = await Product.find();
-  //console.log(products)
-  res.status(200).json(products);
+  console.log(products)
+  //res.status(200).json({products});
 };
 
 const getOneProduct = async (req, res) => {

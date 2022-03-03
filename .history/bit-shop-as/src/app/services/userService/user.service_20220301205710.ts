@@ -12,7 +12,7 @@ export class UserService {
   //url_api = 'http://localhost:5000/api/user'
   url_api = `${environment.API_URL}/user`
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
     this.slectedUser = new User
   }
 

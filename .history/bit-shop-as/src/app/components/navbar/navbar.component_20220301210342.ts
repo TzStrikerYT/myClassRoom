@@ -8,18 +8,12 @@ import { User } from 'src/app/models/userModel';
 })
 export class NavbarComponent implements OnInit {
 
-  token=false
+  token=true
   user='Michael Cocuy'
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('auth_token')){
-      this.token = true
-    } else {
-      this.token = false
-    }
   }
 
   logOut(){

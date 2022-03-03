@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/userModel';
+import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,18 +9,12 @@ import { User } from 'src/app/models/userModel';
 })
 export class NavbarComponent implements OnInit {
 
-  token=false
+  token=true
   user='Michael Cocuy'
 
-  constructor() {
-  }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('auth_token')){
-      this.token = true
-    } else {
-      this.token = false
-    }
   }
 
   logOut(){

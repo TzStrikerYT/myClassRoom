@@ -1,0 +1,94 @@
+<section class="mt-4">
+  <div class="row w-100">
+    <div class="col-lg-5 py-5 d-flex align-items-center justify-content-center">
+      <div class="p-5 shadow-lg rounded w-75">
+        <h3 class="text-purple-dark mb-3 text-center">Registrarme</h3>
+        <hr class="mb-5 text-purple-pastel" />
+
+        <form #userForm="ngForm">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Nombre de usuario</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              #username="ngModel"
+              [(ngModel)]="userService.slectedUser.username"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Correo Electronico</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              #email="ngModel"
+              [(ngModel)]="userService.slectedUser.email"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Telefono</label>
+            <input
+              type="number"
+              class="form-control"
+              name="phone"
+              #phone="ngModel"
+              [(ngModel)]="userService.slectedUser.phone"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              #password="ngModel"
+              [(ngModel)]="userService.slectedUser.password"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Confirmar Contraseña</label>
+            <p
+              class="text-success"
+              *ngIf="
+                userService.slectedUser.password ===
+                  userService.slectedUser.confirmPassword &&
+                userService.slectedUser.password !== ''
+              "
+            >
+              Las contraseñas coinciden
+            </p>
+
+            <input
+              type="password"
+              class="form-control"
+              name="confirmPassword"
+              #confirmPassword="ngModel"
+              [(ngModel)]="userService.slectedUser.confirmPassword"
+            />
+          </div>
+
+          <div class="text-center mt-5">
+            <a
+              class="btn bg-purple-pastel text-white text-center"
+              (click)="register(userForm)"
+              >Registrarme</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-7 bg-image"></div>
+  </div>
+</section>
