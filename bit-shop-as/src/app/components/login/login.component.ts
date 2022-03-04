@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit {
         throw 'Uno o mas campos estan vacios';
 
       this.userService.login(form.value).subscribe((res: any) => {
-        this.router.navigate(['/home']);
-        localStorage.setItem('auth_token', res.token);
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/home'])
+        console.log(res)
       },
       (err) => console.log(err));
     } catch (error) {

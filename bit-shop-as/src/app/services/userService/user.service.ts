@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../../models/userModel'
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router'; 
+import jwtDecode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class UserService {
   //url_api = 'http://localhost:5000/api/user'
   url_api = `${environment.API_URL}/user`
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.slectedUser = new User
   }
 
@@ -40,17 +42,36 @@ export class UserService {
     return this.http.post(`${this.url_api}/create-user`, formUser)
   }
 
-  // function thats logged out an user
+  loggedIn(){
+    return localStorage.getItem('token') ? true : false 
+  }
+
+  isAdmin(){
+    const { permissions } = this.getDataFromToken()
+
+    if(permissions.admin){
+      return true
+    }
+    return false
+
+  }
+
   logOut(){
-    localStorage.getItem('auth_token')
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
   }
 
-  // is logged in returns true
-  // else returns false
-  isLogged(){
-    if(localStorage.getItem('auth_token')) return true
-    else return false
+  getToken(){
+    return localStorage.getItem('token')
   }
 
+  getDataFromToken() :any {
+    const token = this.getToken()
+    const decoded = jwtDecode(token ? token : "Error in token")
+    return decoded
+  }
 
 }
+
+
+

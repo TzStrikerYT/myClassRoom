@@ -13,13 +13,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="#">Productos</a>
-        <a class="nav-link" href="#">Faq</a>
-        <a class="nav-link" href="#">Admin</a>
+      <div class="navbar-nav" *ngIf="userService.loggedIn()">
+        <a class="nav-link" href="/home">Tienda</a>
+        <a class="nav-link" href="/admin" *ngIf="userService.isAdmin()">Admin</a>
+        <a class="nav-link" href="/client">Client</a>
       </div>
 
-      <div class="navbar-nav ms-auto" *ngIf="!token ;else usserLogged">
+      <div class="navbar-nav ms-auto" *ngIf="!userService.loggedIn() ;else usserLogged">
         <a class="btn btn-outline-light m-2" href="/login">Iniciar Sesion</a>
         <a class="btn btn-outline-light m-2" href="/register">Registrarse</a>
       </div>
@@ -27,13 +27,13 @@
       <ng-template #usserLogged> 
         <div class="navbar-nav ms-auto">
             <a class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ user }}
+                {{ userService.getDataFromToken().username }}
             </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><button class="dropdown-item" type="button">Opciones</button></li>
                 <li><button class="dropdown-item" type="button">Mis compras</button></li>
                 <hr>
-                <li><button class="dropdown-item" type="button" (click)="logOut()">Cerrar Sesion</button></li>
+                <li><button class="dropdown-item" type="button" (click)="userService.logOut()">Cerrar Sesion</button></li>
               </ul>
           </div>
       </ng-template>
